@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.textView1.setText("TextView")
 
+        binding.startButton.setOnClickListener{
+            binding.textView1.setText("$i")
+        }
+
         add(10.0,20.0)
     }
 
