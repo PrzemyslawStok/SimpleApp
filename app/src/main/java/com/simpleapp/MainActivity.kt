@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         */
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+        setContentView(R.layout.activity1)
 
         binding.textView1.setText("TextView")
 
