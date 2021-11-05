@@ -1,5 +1,6 @@
 package com.simpleapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener{
             binding.textView1.setText("$i")
+
+            val intent = Intent(this, ButtonActivity::class.java)
+            startActivity(intent)
         }
 
         add(10.0,20.0)
