@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
 
-        setContentView(R.layout.button_layout)
+        setContentView(binding.root)
 
         binding.textView1.setText("TextView")
+
 
         binding.startButton.setOnClickListener{
             binding.textView1.setText("$i")
