@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.nextButton.setOnClickListener {
+
+        }
+
         add(10.0,20.0)
     }
 
