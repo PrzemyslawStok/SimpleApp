@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.nextButton.setOnClickListener {
-
+            val intent = Intent(this, ButtonNextActivity::class.java)
+            startActivity(intent)
         }
 
         add(10.0,20.0)

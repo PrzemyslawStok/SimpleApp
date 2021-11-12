@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
         <activity
+            android:name=".ButtonNextActivity"
+            android:exported="false" />
+        <activity
             android:name=".ButtonActivity"
             android:exported="false" />
         <activity
