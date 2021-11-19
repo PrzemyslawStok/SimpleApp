@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="activity_next_1">#4CAF50</color>
+    <color name="activity_next_2">#B2DFB4</color>
 </resources>
