@@ -24,7 +24,7 @@
         android:id="@+id/view2"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_above="@id/view_center"
+        android:layout_alignBottom="@id/view_center"
         android:layout_toEndOf="@id/view_center"
         android:background="#039C8E" />
     <View
@@ -38,8 +38,8 @@
         android:id="@+id/view4"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_below="@id/view_center"
-        android:layout_alignStart="@id/view_center"
+        android:layout_alignBottom="@id/view_center"
+        android:layout_toStartOf="@id/view_center"
         android:background="#039C8E" />
 
 </RelativeLayout>
