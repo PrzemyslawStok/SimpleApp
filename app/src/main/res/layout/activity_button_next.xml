@@ -32,14 +32,14 @@
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:layout_below="@id/view_center"
-        android:layout_alignEnd="@id/view_center"
+        android:layout_toStartOf="@id/view_center"
         android:background="@color/activity_next_2" />
     <View
         android:id="@+id/view4"
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:layout_below="@id/view_center"
-        android:layout_toEndOf="@id/view_center"
+        android:layout_alignStart="@id/view_center"
         android:background="#039C8E" />
 
 </RelativeLayout>
