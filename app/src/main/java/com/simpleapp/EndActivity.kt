@@ -3,10 +3,9 @@ package com.simpleapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ButtonActivity : AppCompatActivity() {
+class EndActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.button_layout)
+        setContentView(R.layout.activity_button_next)
     }
 }

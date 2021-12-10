@@ -3,8 +3,6 @@ package com.simpleapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import com.simpleapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,12 +33,17 @@ class MainActivity : AppCompatActivity() {
         binding.startButton.setOnClickListener{
             binding.textView1.setText("$i")
 
-            val intent = Intent(this, ButtonActivity::class.java)
+            val intent = Intent(this, StartActivity::class.java)
             startActivity(intent)
         }
 
         binding.nextButton.setOnClickListener {
-            val intent = Intent(this, ButtonNextActivity::class.java)
+            val intent = Intent(this, NextActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.endButton.setOnClickListener {
+            val intent = Intent(this, EndActivity::class.java)
             startActivity(intent)
         }
 

@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
         <activity
-            android:name=".ButtonNextActivity"
+            android:name=".NextActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EndActivity"
             android:exported="false" />
         <activity
-            android:name=".ButtonActivity"
+            android:name=".StartActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
