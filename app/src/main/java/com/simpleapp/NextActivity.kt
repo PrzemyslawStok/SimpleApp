@@ -6,7 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.simpleapp.databinding.ActivityNextLayoutBinding
 
 class NextActivity : AppCompatActivity() {
-    var initNumber = 101
+    var initNumber = 0
     var number = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +22,22 @@ class NextActivity : AppCompatActivity() {
 
         binding.buttonLeft.setOnClickListener {
             number+=9
+            binding.mainTextView.setText("${number}")
+        }
+
+
+        binding.buttonRight.setOnClickListener {
+            number-=7
+            binding.mainTextView.setText("${number}")
+        }
+
+        binding.buttonUp.setOnClickListener {
+            number+=3
+            binding.mainTextView.setText("${number}")
+        }
+
+        binding.buttonDown.setOnClickListener {
+            number-=5
             binding.mainTextView.setText("${number}")
         }
 
