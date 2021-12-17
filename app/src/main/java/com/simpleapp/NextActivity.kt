@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.simpleapp.databinding.ActivityNextLayoutBinding
 
 class NextActivity : AppCompatActivity() {
-    val number = 101
+    var number = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +15,11 @@ class NextActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.mainTextView.setText("${number}")
+
+        binding.buttonLeft.setOnClickListener {
+            number+=9
+            binding.mainTextView.setText("${number}")
+        }
 
     }
 }
