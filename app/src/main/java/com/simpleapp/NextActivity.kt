@@ -72,12 +72,14 @@ class NextActivity : AppCompatActivity() {
         }
 
         trialsNumber = 0
+        currentTrial?.setText("$trialsNumber")
     }
 
     fun restartGame(){
         trialsNumber++
 
         mainNumberText?.setText("${number}")
+        currentTrial?.setText("$trialsNumber")
 
 
         if(number==initNumber){
