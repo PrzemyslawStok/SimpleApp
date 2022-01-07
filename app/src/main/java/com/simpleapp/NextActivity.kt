@@ -12,7 +12,7 @@ class NextActivity : AppCompatActivity() {
     var initNumber = 0
     var number = 0
     var trialsNumber = 0
-    var record = 0
+    var record = 1000
 
     var mainNumberText: TextView? = null
     var recordText: TextView? = null
@@ -66,6 +66,11 @@ class NextActivity : AppCompatActivity() {
         while(number==0){
             number = Random.nextInt(-100,100)
         }
+
+        if(record>trialsNumber){
+            record = trialsNumber
+        }
+
         trialsNumber = 0
     }
 
