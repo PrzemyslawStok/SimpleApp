@@ -5,16 +5,21 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.simpleapp.databinding.ActivityNextLayoutBinding
+import kotlin.random.Random
 
 class NextActivity : AppCompatActivity() {
     var initNumber = 0
-    var number = 101
+    var number = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_next_layout)
 
         //number = initNumber
+
+        while(number==0){
+            number = Random.nextInt(-100,100)
+        }
 
         val binding = ActivityNextLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
