@@ -63,12 +63,15 @@ class NextActivity : AppCompatActivity() {
     }
 
     fun newGame(){
+        recordText?.setText("$record")
+
         while(number==0){
             number = Random.nextInt(-100,100)
         }
 
         if(record>trialsNumber){
             record = trialsNumber
+            recordText?.setText("$record")
         }
 
         trialsNumber = 0
