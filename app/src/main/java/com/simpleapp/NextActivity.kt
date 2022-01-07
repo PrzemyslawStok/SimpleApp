@@ -12,8 +12,11 @@ class NextActivity : AppCompatActivity() {
     var initNumber = 0
     var number = 0
     var trialsNumber = 0
+    var record = 0
 
     var mainNumberText: TextView? = null
+    var recordText: TextView? = null
+    var currentTrial: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,8 @@ class NextActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mainNumberText = binding.mainTextView
+        recordText = binding.textViewRecord
+        currentTrial = binding.textViewCurrentTrial
 
         binding.mainTextView.setText("${number}")
 
@@ -68,6 +73,7 @@ class NextActivity : AppCompatActivity() {
         trialsNumber++
 
         mainNumberText?.setText("${number}")
+
 
         if(number==initNumber){
             Toast.makeText(this,"Gra zakończona po $trialsNumber próbach",Toast.LENGTH_LONG).show()
