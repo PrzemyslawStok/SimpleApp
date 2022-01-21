@@ -13,6 +13,7 @@ class NextActivity : AppCompatActivity() {
     var number = 0
     var trialsNumber = 0
     var record = 1000
+    var firstRun = true
 
     var mainNumberText: TextView? = null
     var recordText: TextView? = null
@@ -36,57 +37,62 @@ class NextActivity : AppCompatActivity() {
         binding.mainTextView.setText("${number}")
 
         binding.buttonLeft.setOnClickListener {
-            number+=9
+            number += 9
 
             restartGame()
         }
 
 
         binding.buttonRight.setOnClickListener {
-            number-=7
+            number -= 7
 
             restartGame()
         }
 
         binding.buttonUp.setOnClickListener {
-            number+=3
+            number += 3
 
             restartGame()
         }
 
         binding.buttonDown.setOnClickListener {
-            number-=5
+            number -= 5
 
             restartGame()
         }
 
     }
 
-    fun newGame(){
-        recordText?.setText("$record")
+    fun newGame() {
+        if(!firstRun)
+            recordText?.setText("$record")
 
-        while(number==0){
-            number = Random.nextInt(-100,100)
+        while (number == 0) {
+            number = Random.nextInt(-100, 100)
         }
 
-        if(record>trialsNumber){
+        if (record > trialsNumber && !firstRun) {
             record = trialsNumber
             recordText?.setText("$record")
         }
 
+        mainNumberText?.setText("$number")
         trialsNumber = 0
         currentTrial?.setText("$trialsNumber")
+
+        firstRun = false
     }
 
-    fun restartGame(){
+    fun restartGame() {
         trialsNumber++
 
         mainNumberText?.setText("${number}")
         currentTrial?.setText("$trialsNumber")
 
 
-        if(number==initNumber){
-            Toast.makeText(this,"Gra zakończona po $trialsNumber próbach",Toast.LENGTH_LONG).show()
+        if (number == initNumber) {
+            Toast.makeText(this, "Gra zakończona po $trialsNumber próbach", Toast.LENGTH_LONG)
+                .show()
             newGame()
         }
     }
