@@ -29,14 +29,14 @@ class NextActivity : AppCompatActivity() {
         val sharedPref = getPreferences(Context.MODE_PRIVATE)
         record = sharedPref.getInt(getString(R.string.record), record)
 
-        newGame()
-
         val binding = ActivityNextLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         mainNumberText = binding.mainTextView
         recordText = binding.textViewRecord
         currentTrial = binding.textViewCurrentTrial
+
+        newGame()
 
         binding.mainTextView.setText("${number}")
 
@@ -77,14 +77,13 @@ class NextActivity : AppCompatActivity() {
     }
 
     fun newGame() {
-        if (!firstRun)
-            recordText?.setText("$record")
+        recordText?.setText("$record")
 
         while (number > -20 && number < 20) {
             number = Random.nextInt(-100, 100)
         }
 
-        if (record > trialsNumber && !firstRun) {
+        if (record > trialsNumber && trialsNumber != 0) {
             record = trialsNumber
             recordText?.setText("$record")
         }
@@ -92,8 +91,6 @@ class NextActivity : AppCompatActivity() {
         mainNumberText?.setText("$number")
         trialsNumber = 0
         currentTrial?.setText("$trialsNumber")
-
-        firstRun = false
     }
 
     fun restartGame() {
