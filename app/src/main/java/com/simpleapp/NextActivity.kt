@@ -67,7 +67,7 @@ class NextActivity : AppCompatActivity() {
         if(!firstRun)
             recordText?.setText("$record")
 
-        while (number == 0) {
+        while (number > -20 && number < 20) {
             number = Random.nextInt(-100, 100)
         }
 
