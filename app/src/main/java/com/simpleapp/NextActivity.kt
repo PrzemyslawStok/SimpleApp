@@ -1,5 +1,6 @@
 package com.simpleapp
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -24,6 +25,9 @@ class NextActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_next_layout)
 
         //number = initNumber
+
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        record = sharedPref.getInt(getString(R.string.record), record)
 
         newGame()
 
@@ -63,8 +67,17 @@ class NextActivity : AppCompatActivity() {
 
     }
 
+    override fun onDestroy() {
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putInt(getString(R.string.record), record)
+        editor.apply()
+
+        super.onDestroy()
+    }
+
     fun newGame() {
-        if(!firstRun)
+        if (!firstRun)
             recordText?.setText("$record")
 
         while (number > -20 && number < 20) {
