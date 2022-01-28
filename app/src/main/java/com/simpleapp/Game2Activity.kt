@@ -16,6 +16,7 @@ class Game2Activity : AppCompatActivity() {
 
         val mainLayout = binding.mainLayout
         mainLayout.setBackgroundColor(Color.GRAY)
+        mainLayout.removeAllViews()
 
     }
 }
