@@ -3,4 +3,6 @@
     <string name="next_button">Następny</string>
     <string name="start_button">Start</string>
     <string name="end_button">Koniec</string>
+    <string name="game1_button">Gra 1</string>
+    <string name="game2_button">Gra 2</string>
 </resources>

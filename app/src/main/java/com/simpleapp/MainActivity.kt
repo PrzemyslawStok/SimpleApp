@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.textView1.setText("TextView")
 
 
-        binding.startButton.setOnClickListener{
-            binding.textView1.setText("$i")
+
+        binding.startButton.setOnClickListener {
+
 
             val intent = Intent(this, StartActivity::class.java)
             startActivity(intent)
@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        add(10.0,20.0)
+        add(10.0, 20.0)
     }
 
-    fun add(x: Double, y: Double):Double{
-        return x+y
+    fun add(x: Double, y: Double): Double {
+        return x + y
     }
 }

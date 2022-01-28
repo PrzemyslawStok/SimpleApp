@@ -2,6 +2,8 @@
     <string name="app_name">SimpleApp</string>
     <string name="start_button">Start</string>
     <string name="next_button">Next</string>
+    <string name="game1_button">Game 1</string>
+    <string name="game2_button">Game 2</string>
     <string name="end_button">End</string>
     <string name="record" translatable="false">record</string>
 </resources>
