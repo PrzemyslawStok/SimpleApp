@@ -23,9 +23,11 @@ class Game2Activity : AppCompatActivity() {
 
         //mainLayout.setBackgroundColor(Color.GRAY)
         mainLayout.removeAllViews()
-        mainLayout.weightSum = 10.0f
 
+        addRow(mainLayout)
+    }
 
+    fun addRow(layout: LinearLayoutCompat){
         for (i in 1..10) {
             val view = View(this)
             if (i % 2 == 0)
@@ -40,9 +42,7 @@ class Game2Activity : AppCompatActivity() {
             params.weight = 1.0f
             view.layoutParams = params
 
-            mainLayout.addView(view)
+            layout.addView(view)
         }
-
-
     }
 }
