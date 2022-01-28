@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
@@ -22,6 +23,7 @@ class Game2Activity : AppCompatActivity() {
 
         //mainLayout.setBackgroundColor(Color.GRAY)
         mainLayout.removeAllViews()
+        mainLayout.weightSum = 10.0f
 
 
         for (i in 1..10) {
@@ -31,10 +33,12 @@ class Game2Activity : AppCompatActivity() {
             else
                 view.setBackgroundColor(Color.GRAY)
 
-            view.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT, 1.0f
+            val params = LinearLayoutCompat.LayoutParams(
+                LinearLayoutCompat.LayoutParams.MATCH_PARENT,
+                LinearLayoutCompat.LayoutParams.MATCH_PARENT
             )
+            params.weight = 1.0f
+            view.layoutParams = params
 
             mainLayout.addView(view)
         }
