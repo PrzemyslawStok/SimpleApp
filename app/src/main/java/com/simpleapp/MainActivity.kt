@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.nextButton.setOnClickListener {
-            val intent = Intent(this, NextActivity::class.java)
+            val intent = Intent(this, Game1Activity::class.java)
             startActivity(intent)
         }
 
         binding.endButton.setOnClickListener {
-            val intent = Intent(this, EndActivity::class.java)
+            val intent = Intent(this, Game2Activity::class.java)
             startActivity(intent)
         }
 

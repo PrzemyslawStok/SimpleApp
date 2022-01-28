@@ -1,15 +1,14 @@
 package com.simpleapp
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import com.simpleapp.databinding.ActivityNextLayoutBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.simpleapp.databinding.ActivityGame1Binding
 import kotlin.random.Random
 
-class NextActivity : AppCompatActivity() {
+class Game1Activity : AppCompatActivity() {
     var initNumber = 0
     var number = 0
     var trialsNumber = 0
@@ -29,7 +28,7 @@ class NextActivity : AppCompatActivity() {
         val sharedPref = getPreferences(Context.MODE_PRIVATE)
         record = sharedPref.getInt(getString(R.string.record), record)
 
-        val binding = ActivityNextLayoutBinding.inflate(layoutInflater)
+        val binding = ActivityGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         mainNumberText = binding.mainTextView

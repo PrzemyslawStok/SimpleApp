@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
         <activity
-            android:name=".NextActivity"
+            android:name=".Game1Activity"
             android:exported="true" />
         <activity
-            android:name=".EndActivity"
+            android:name=".Game2Activity"
             android:exported="false" />
         <activity
             android:name=".StartActivity"
