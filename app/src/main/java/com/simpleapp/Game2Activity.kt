@@ -10,14 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.simpleapp.databinding.ActivityGame2Binding
 import com.simpleapp.databinding.ActivityGame2GridBinding
+import java.util.*
 import kotlin.random.Random
 
 class Game2Activity : AppCompatActivity() {
     val gameBoardRows = 5
-    val gameBoardColumns = 10
+    val gameBoardColumns = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         val binding = ActivityGame2GridBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,12 +28,15 @@ class Game2Activity : AppCompatActivity() {
         mainLayout.rowCount = gameBoardRows
         mainLayout.columnCount = gameBoardColumns
 
+        createGameboardArray()
+
         for (i in 1..gameBoardRows * gameBoardColumns) {
 
             val view = View(this)
 
+            val r = Random.nextInt(0, 255)
             view.setBackgroundColor(
-                Color.rgb(Random.nextInt(0, 255), Random.nextInt(0, 255), Random.nextInt(0, 255))
+                Color.rgb(r, r, r)
             )
 
             val params = GridLayout.LayoutParams(
@@ -52,6 +57,18 @@ class Game2Activity : AppCompatActivity() {
 
         //mainLayout.orientation = LinearLayoutCompat.HORIZONTAL
 
+
+    }
+
+    fun createGameboardArray() {
+        val gameboard = arrayOf(
+            arrayOf(1, 2, 3, 4, 5),
+            arrayOf(1, 2, 3, 4, 5), arrayOf(1, 2, 3, 4, 5),
+            arrayOf(1, 2, 3, 4, 5), arrayOf(1, 2, 3, 4, 5)
+        )
+    }
+
+    fun fillGameboardArray(){
 
     }
 
