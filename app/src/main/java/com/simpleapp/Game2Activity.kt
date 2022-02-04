@@ -2,6 +2,7 @@ package com.simpleapp
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.GridLayout
 import android.widget.TextView
@@ -13,6 +14,7 @@ import com.simpleapp.databinding.ActivityGame2GridBinding
 class Game2Activity : AppCompatActivity() {
     val gameBoardRows = 5
     val gameBoardColumns = 10
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -25,8 +27,7 @@ class Game2Activity : AppCompatActivity() {
 
         for (i in 1..gameBoardRows * gameBoardColumns) {
 
-            val view = TextView(this)
-            view.setText("$i")
+            val view = View(this)
 
             if (i % 2 == 0)
                 view.setBackgroundColor(Color.CYAN)
@@ -35,8 +36,9 @@ class Game2Activity : AppCompatActivity() {
 
             val params = GridLayout.LayoutParams()
 
-            params.width = GridLayout.LayoutParams.WRAP_CONTENT
-            params.height = GridLayout.LayoutParams.WRAP_CONTENT
+            params.width = 100
+            params.height = 100
+            //params.setGravity(Gravity.FILL)
 
             mainLayout.addView(view, params)
         }
