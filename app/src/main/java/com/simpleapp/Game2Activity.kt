@@ -61,15 +61,11 @@ class Game2Activity : AppCompatActivity() {
     }
 
     fun createGameboardArray() {
-        val gameboard = arrayOf(
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5), arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5), arrayOf(1, 2, 3, 4, 5)
-        )
+        //proszę utworzyć macierz 2d o rozmiarach planszy gry
     }
 
     fun fillGameboardArray(){
-
+        //proszę zapełnić macierz losowymi cyframi 0,1
     }
 
     fun addLayout(mainLayout: LinearLayoutCompat) {
