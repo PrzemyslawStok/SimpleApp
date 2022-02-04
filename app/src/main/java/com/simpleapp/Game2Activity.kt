@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.simpleapp.databinding.ActivityGame2Binding
 import com.simpleapp.databinding.ActivityGame2GridBinding
+import kotlin.random.Random
 
 class Game2Activity : AppCompatActivity() {
     val gameBoardRows = 5
@@ -29,15 +30,17 @@ class Game2Activity : AppCompatActivity() {
 
             val view = View(this)
 
-            if (i % 2 == 0)
-                view.setBackgroundColor(Color.CYAN)
-            else
-                view.setBackgroundColor(Color.GRAY)
+            view.setBackgroundColor(
+                Color.rgb(Random.nextInt(0, 255), Random.nextInt(0, 255), Random.nextInt(0, 255))
+            )
 
-            val params = GridLayout.LayoutParams()
+            val params = GridLayout.LayoutParams(
+                GridLayout.spec(GridLayout.UNDEFINED, 1f),
+                GridLayout.spec(GridLayout.UNDEFINED, 1f)
+            )
 
-            params.width = 100
-            params.height = 100
+            params.width = 0
+            params.height = 0
             //params.setGravity(Gravity.FILL)
 
             mainLayout.addView(view, params)
