@@ -6,30 +6,32 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.simpleapp.databinding.ActivityGame2Binding
+import com.simpleapp.databinding.ActivityGame2GridBinding
 
 class Game2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityGame2Binding.inflate(layoutInflater)
+        val binding = ActivityGame2GridBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val mainLayout = binding.mainLayout
 
         //mainLayout.setBackgroundColor(Color.GRAY)
-        mainLayout.removeAllViews()
+        //mainLayout.removeAllViews()
+
+        //mainLayout.orientation = LinearLayoutCompat.HORIZONTAL
 
 
-        mainLayout.orientation = LinearLayoutCompat.VERTICAL
+    }
 
-        for (i in 1..10) {
+    fun addLayout(mainLayout: LinearLayoutCompat){
+        for (i in 1..2) {
             val linearLayoutCompat = LinearLayoutCompat(this)
             if (i % 2 == 0)
                 linearLayoutCompat.setBackgroundColor(Color.CYAN)
             else
                 linearLayoutCompat.setBackgroundColor(Color.GRAY)
-
-            linearLayoutCompat.orientation = LinearLayoutCompat.HORIZONTAL
 
             val params = LinearLayoutCompat.LayoutParams(
                 LinearLayoutCompat.LayoutParams.MATCH_PARENT,
@@ -43,19 +45,19 @@ class Game2Activity : AppCompatActivity() {
 
             //addRow(linearLayoutCompat)
             mainLayout.addView(linearLayoutCompat)
+            //addRow(linearLayoutCompat)
         }
-
-
-        //addRow(mainLayout)
     }
 
     fun addRow(layout: LinearLayoutCompat){
+        layout.orientation = LinearLayoutCompat.VERTICAL
+
         for (i in 1..10) {
             val view = View(this)
             if (i % 2 == 0)
-                view.setBackgroundColor(Color.CYAN)
+                view.setBackgroundColor(Color.GREEN)
             else
-                view.setBackgroundColor(Color.GRAY)
+                view.setBackgroundColor(Color.YELLOW)
 
             val params = LinearLayoutCompat.LayoutParams(
                 LinearLayoutCompat.LayoutParams.MATCH_PARENT,
