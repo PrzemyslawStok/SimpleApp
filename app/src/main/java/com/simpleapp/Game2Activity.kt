@@ -19,7 +19,34 @@ class Game2Activity : AppCompatActivity() {
         //mainLayout.setBackgroundColor(Color.GRAY)
         mainLayout.removeAllViews()
 
-        addRow(mainLayout)
+
+        mainLayout.orientation = LinearLayoutCompat.VERTICAL
+
+        for (i in 1..10) {
+            val linearLayoutCompat = LinearLayoutCompat(this)
+            if (i % 2 == 0)
+                linearLayoutCompat.setBackgroundColor(Color.CYAN)
+            else
+                linearLayoutCompat.setBackgroundColor(Color.GRAY)
+
+            linearLayoutCompat.orientation = LinearLayoutCompat.HORIZONTAL
+
+            val params = LinearLayoutCompat.LayoutParams(
+                LinearLayoutCompat.LayoutParams.MATCH_PARENT,
+                LinearLayoutCompat.LayoutParams.MATCH_PARENT
+            )
+
+            params.weight = 1.0f
+
+            linearLayoutCompat.layoutParams = params
+
+
+            //addRow(linearLayoutCompat)
+            mainLayout.addView(linearLayoutCompat)
+        }
+
+
+        //addRow(mainLayout)
     }
 
     fun addRow(layout: LinearLayoutCompat){
