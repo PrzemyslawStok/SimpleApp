@@ -30,13 +30,19 @@ class Game2Activity : AppCompatActivity() {
         gameBoardArray = createGameboardArray(gameBoardRows, gameBoardColumns)
         createGameboard(gameBoardRows, gameBoardColumns)
 
-        for (i in 1..gameBoardRows * gameBoardColumns) {
+        for (i in 0..gameBoardRows * gameBoardColumns - 1) {
 
             val view = View(this)
 
             val r = Random.nextInt(0, 255)
 
-            Log.v("Game2Activity","${i/gameBoardRows}")
+            val row = i / gameBoardRows
+            val col = i / gameBoardRows //Zad. proszę ustalić odpowiedni numer
+
+            Log.v(
+                "Game2Activity",
+                "[$row][$col]"
+            )
             view.setBackgroundColor(
                 Color.rgb(r, r, r)
             )
