@@ -11,8 +11,8 @@ import com.simpleapp.databinding.ActivityGame2GridBinding
 import kotlin.random.Random
 
 class Game2Activity : AppCompatActivity() {
-    val gameBoardRows = 2
-    val gameBoardColumns = 5
+    val gameBoardRows = 5
+    val gameBoardColumns = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +59,15 @@ class Game2Activity : AppCompatActivity() {
 
     fun createGameboardArray(rows: Int = 5, cols: Int = 5) {
         //proszę utworzyć macierz 2d o rozmiarach planszy gry
-        val array = arrayListOf(1, 2, 3, 4, 5)
+        //val array = arrayListOf(1, 2, 3, 4, 5)
+        //val array1 = Array(rows) { it * it }
 
-        Log.v("Game2Activity", "${array}")
+        val array2 = Array(rows) { IntArray(cols) { 1 } }
+
+        for(row in array2){
+            Log.v("Game2Activity", "${row.toList()}")
+        }
+
     }
 
     fun fillGameboardArray() {
