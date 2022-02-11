@@ -6,13 +6,15 @@ import android.util.Log
 import android.view.View
 import android.widget.GridLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.LinearLayoutCompat
 import com.simpleapp.databinding.ActivityGame2GridBinding
 import kotlin.random.Random
 
 class Game2Activity : AppCompatActivity() {
-    val gameBoardRows = 5
-    val gameBoardColumns = 10
+    val gameBoardRows = 2
+    val gameBoardColumns = 5
+
+    var gameBoardArray: Array<IntArray>? = null
+    var gameBoard: Array<Array<View?>>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +27,16 @@ class Game2Activity : AppCompatActivity() {
         mainLayout.rowCount = gameBoardRows
         mainLayout.columnCount = gameBoardColumns
 
-        createGameboardArray(gameBoardRows, gameBoardColumns)
+        gameBoardArray = createGameboardArray(gameBoardRows, gameBoardColumns)
+        createGameboard(gameBoardRows, gameBoardColumns)
 
         for (i in 1..gameBoardRows * gameBoardColumns) {
 
             val view = View(this)
 
             val r = Random.nextInt(0, 255)
+
+            Log.v("Game2Activity","${i/gameBoardRows}")
             view.setBackgroundColor(
                 Color.rgb(r, r, r)
             )
@@ -57,65 +62,40 @@ class Game2Activity : AppCompatActivity() {
 
     }
 
-    fun createGameboardArray(rows: Int = 5, cols: Int = 5) {
+    fun createGameboardArray(rows: Int = 5, cols: Int = 5): Array<IntArray> {
         //proszę utworzyć macierz 2d o rozmiarach planszy gry
         //val array = arrayListOf(1, 2, 3, 4, 5)
         //val array1 = Array(rows) { it * it }
 
-        val array2 = Array(rows) { IntArray(cols) { 1 } }
+        val array2 = Array(rows) {
+            IntArray(cols) {
+                Random.nextInt(0, 2)
+            }
+        }
+        logArray(array2)
 
-        for(row in array2){
+        return array2
+    }
+
+    fun createGameboard(rows: Int = 5, cols: Int = 5) {
+        gameBoard = Array(rows) {
+            Array<View?>(cols) {
+                null
+            }
+        }
+    }
+
+    fun logArray(array: Array<IntArray>) {
+        for (row in array) {
             Log.v("Game2Activity", "${row.toList()}")
         }
-
     }
 
     fun fillGameboardArray() {
         //proszę zapełnić macierz losowymi cyframi 0,1
     }
 
-    fun addLayout(mainLayout: LinearLayoutCompat) {
-        for (i in 1..2) {
-            val linearLayoutCompat = LinearLayoutCompat(this)
-            if (i % 2 == 0)
-                linearLayoutCompat.setBackgroundColor(Color.CYAN)
-            else
-                linearLayoutCompat.setBackgroundColor(Color.GRAY)
+    fun drawGameboard() {
 
-            val params = LinearLayoutCompat.LayoutParams(
-                LinearLayoutCompat.LayoutParams.MATCH_PARENT,
-                LinearLayoutCompat.LayoutParams.MATCH_PARENT
-            )
-
-            params.weight = 1.0f
-
-            linearLayoutCompat.layoutParams = params
-
-
-            //addRow(linearLayoutCompat)
-            mainLayout.addView(linearLayoutCompat)
-            //addRow(linearLayoutCompat)
-        }
-    }
-
-    fun addRow(layout: LinearLayoutCompat) {
-        layout.orientation = LinearLayoutCompat.VERTICAL
-
-        for (i in 1..10) {
-            val view = View(this)
-            if (i % 2 == 0)
-                view.setBackgroundColor(Color.GREEN)
-            else
-                view.setBackgroundColor(Color.YELLOW)
-
-            val params = LinearLayoutCompat.LayoutParams(
-                LinearLayoutCompat.LayoutParams.MATCH_PARENT,
-                LinearLayoutCompat.LayoutParams.MATCH_PARENT
-            )
-            params.weight = 1.0f
-            view.layoutParams = params
-
-            layout.addView(view)
-        }
     }
 }
