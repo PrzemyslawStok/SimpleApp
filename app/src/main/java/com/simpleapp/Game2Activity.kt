@@ -2,19 +2,16 @@ package com.simpleapp
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
+import android.util.Log
 import android.view.View
 import android.widget.GridLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
-import com.simpleapp.databinding.ActivityGame2Binding
 import com.simpleapp.databinding.ActivityGame2GridBinding
-import java.util.*
 import kotlin.random.Random
 
 class Game2Activity : AppCompatActivity() {
-    val gameBoardRows = 5
+    val gameBoardRows = 2
     val gameBoardColumns = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +25,7 @@ class Game2Activity : AppCompatActivity() {
         mainLayout.rowCount = gameBoardRows
         mainLayout.columnCount = gameBoardColumns
 
-        createGameboardArray()
+        createGameboardArray(gameBoardRows, gameBoardColumns)
 
         for (i in 1..gameBoardRows * gameBoardColumns) {
 
@@ -60,11 +57,14 @@ class Game2Activity : AppCompatActivity() {
 
     }
 
-    fun createGameboardArray() {
+    fun createGameboardArray(rows: Int = 5, cols: Int = 5) {
         //proszę utworzyć macierz 2d o rozmiarach planszy gry
+        val array = arrayListOf(1, 2, 3, 4, 5)
+
+        Log.v("Game2Activity", "${array}")
     }
 
-    fun fillGameboardArray(){
+    fun fillGameboardArray() {
         //proszę zapełnić macierz losowymi cyframi 0,1
     }
 
